@@ -53,9 +53,10 @@ sayGoodbye('Dwaine');
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
-  /* code here */
+function temperatureCtoF(temp) {
+  console.log(temp*9/5 + 32)
 }
+temperatureCtoF(0);
 
 /**
  * ### Challenge `temperatureInF`
@@ -74,10 +75,14 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
+function temperatureInF(temp, sign) {
+  if (sign === 'C') {
+    console.log(Math.round(temp*9/5 + 32)+'F');
+  } else {
+    console.log(`${temp}F`);
+  } 
 }
-
+temperatureInF(24,'C')
 
 /**
  * ### Challenge `makePersonObject`
@@ -116,7 +121,6 @@ function getName(/* code here */) {
   /* code here */
 }
 
-
 /**
  * ### Challenge `appleIndex`
  * 
@@ -132,9 +136,15 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(array) {
+  for (let i=0; i < array.length; i++){
+    if (array[i]==='apple' ){
+      console.log (i);
+    }
+  }
 }
+appleIndex(['orange', 'grape', 'apple', 'banana', 'mango']);
+
 
 /**
  * ### Challenge `isItAnApple`
