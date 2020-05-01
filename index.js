@@ -152,7 +152,7 @@ appleIndex(['orange', 'grape', 'apple', 'banana', 'mango']);
  * @instructions
  * This function takes as its only argument an array 
  * containing strings,
- * and returns an array of equal length containing the `true`
+ * and returns an array of equal length containing `true`
  * if the corresponding entry in the original array is 'apple' 
  * and `false` if it is anything else.
  * 
@@ -161,11 +161,18 @@ appleIndex(['orange', 'grape', 'apple', 'banana', 'mango']);
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+let newArray=[];
+
+function isItAnApple(array) {
+  for(let i=0; i < array.length;i++)
+  if(array[i]==='apple'){
+    newArray.push(true);
+  } else {
+    newArray.push(false);
+  }
+  console.log(newArray);
 }
-
-
+isItAnApple([ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ]);
 
 /*
 // ⭐️ Example Test Data ⭐️
