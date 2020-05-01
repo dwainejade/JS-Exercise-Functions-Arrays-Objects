@@ -36,7 +36,7 @@ function addNumbers(num1, num2) {
  * 
 */
 function sayGoodbye(name) {
-  console.log(`Goodbye, ${name}. Have a great day`);
+  return `Goodbye, ${name}. Have a great day.`;
 }
 sayGoodbye('Dwaine');
 /**
@@ -54,9 +54,9 @@ sayGoodbye('Dwaine');
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
 function temperatureCtoF(temp) {
-  console.log(temp*9/5 + 32)
+  return Math.round(temp * 9 / 5 + 32);
 }
-temperatureCtoF(0);
+temperatureCtoF(24);
 
 /**
  * ### Challenge `temperatureInF`
@@ -77,12 +77,12 @@ temperatureCtoF(0);
 */
 function temperatureInF(temp, sign) {
   if (sign === 'C') {
-    console.log(Math.round(temp*9/5 + 32)+'F');
+    return Math.round(temp * 9 / 5 + 32) + 'F';
   } else {
-    console.log(`${temp}F`);
-  } 
+    return `${temp}F`;
+  }
 }
-temperatureInF(24,'C')
+temperatureInF(24, 'C')
 
 /**
  * ### Challenge `makePersonObject`
@@ -100,9 +100,14 @@ temperatureInF(24,'C')
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(id, name, email) {
+  let person = [];
+  person.id = id;
+  person.name = name;
+  person.email = email;
+  console.log(person)
 }
+makePersonObject('dm', 'dwaine', 'dwaine@mail');
 
 /**
  * ### Challenge `getName`
@@ -137,9 +142,9 @@ function getName(/* code here */) {
  * the returned value should be: 2.
 */
 function appleIndex(array) {
-  for (let i=0; i < array.length; i++){
-    if (array[i]==='apple' ){
-      console.log (i);
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === 'apple') {
+      return i;
     }
   }
 }
@@ -161,18 +166,18 @@ appleIndex(['orange', 'grape', 'apple', 'banana', 'mango']);
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-let newArray=[];
+let newArray = [];
 
 function isItAnApple(array) {
-  for(let i=0; i < array.length;i++)
-  if(array[i]==='apple'){
-    newArray.push(true);
-  } else {
-    newArray.push(false);
-  }
-  console.log(newArray);
+  for (let i = 0; i < array.length; i++)
+    if (array[i] === 'apple') {
+      newArray.push(true);
+    } else {
+      newArray.push(false);
+    }
+  return newArray;
 }
-isItAnApple([ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ]);
+isItAnApple(['orange', 'apple', 'banana', 'apples', 'apple', 'mango']);
 
 /*
 // ⭐️ Example Test Data ⭐️
@@ -247,7 +252,7 @@ function getCarInfoByIndex(inventory, index) {
   const info = inventory[index];
   return `This s a ${info.car_make} ${info.car_model}`;
 }
-getCarInfoByIndex(inventory,4);
+getCarInfoByIndex(inventory, 4);
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -261,7 +266,7 @@ getCarInfoByIndex(inventory,4);
  * it will return `This is a Lincoln Town Car`.
 */
 function getLastCarInfo(inventory) {
-  const lastCar = inventory[inventory.length-1];
+  const lastCar = inventory[inventory.length - 1];
   return `This is a ${lastCar.car_make} ${lastCar.car_model}`;
 }
 console.log(getLastCarInfo(inventory));
@@ -364,9 +369,9 @@ if (typeof exports !== 'undefined') {
   if (appleIndex) { module.exports.appleIndex = appleIndex }
 
   if (isItAnApple) { module.exports.isItAnApple = isItAnApple }
-  
 
-  
+
+
   if (carMaker) { module.exports.carMaker = carMaker }
   if (getCarInfoByIndex) { module.exports.getCarInfoByIndex = getCarInfoByIndex }
   if (getLastCarInfo) { module.exports.getLastCarInfo = getLastCarInfo }
@@ -375,5 +380,5 @@ if (typeof exports !== 'undefined') {
   if (getModelYears) { module.exports.getModelYears = getModelYears }
   if (getOlderCars) { module.exports.getOlderCars = getOlderCars }
   if (getGermanCars) { module.exports.getGermanCars = getGermanCars }
- 
+
 }
