@@ -175,11 +175,11 @@ function isItAnApple(array) {
     } else {
       newArray.push(false);
     }
-  console.log(newArray);
+  return newArray;
 }
 isItAnApple(['orange', 'apple', 'banana', 'apples', 'apple', 'mango']);
 
-/*
+
 // ⭐️ Example Test Data ⭐️
 
 var inventory = [
@@ -199,7 +199,7 @@ var inventory = [
   { id: 14, car_make: "Dodge", car_model: "Ram Van 1500", car_year: 1999 }
   /// ... Truncated
 ]
-*/
+
 /**
   * ### Example Array Challenge:
   * 
